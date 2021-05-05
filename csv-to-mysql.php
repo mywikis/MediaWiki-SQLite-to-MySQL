@@ -55,6 +55,3 @@ fclose($handle);
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE page SET page_lang = NULL WHERE page_lang REGEXP '[^A-Za-z]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE updatelog SET ul_value = NULL WHERE ul_value REGEXP '[^A-Za-z]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE watchlist SET wl_notificationtimestamp = NULL WHERE wl_notificationtimestamp REGEXP '[^A-Za-z0-9]';" ${database}`;
-//`mysql -h ${host} -u ${username} -p${password} -e "UPDATE  SET  = NULL WHERE  REGEXP '[^A-Za-z0-9]';" ${database}`;
-//`mysql -h ${host} -u ${username} -p${password} -e "UPDATE  SET  = NULL WHERE  REGEXP '[^A-Za-z0-9]';" ${database}`;
-//`mysql -h ${host} -u ${username} -p${password} -e "UPDATE  SET  = NULL WHERE  REGEXP '[^A-Za-z]';" ${database}`;
