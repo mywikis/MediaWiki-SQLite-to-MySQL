@@ -29,6 +29,11 @@ It converts by using a CSV file as an intermediate data representation format. F
 
 ## Known issues
 
-- There will be some errors saying "table missing" if you don't have certain tables. There will also be one MySQL `ERROR` that appears at the very end, saying something along the lines of a malformed query. These are normal and expected.
+- The following errors are normal and expected:
+```
+Error: no such table: external_user
+Error: near ";": syntax error
+ERROR 1064 (42000) at line 1: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' ESCAPED BY '"' LINES TERMINATED ...' at line 1
+```
 - If MySQL says that "this command isn't supported in this version" or "this command was disabled", enable `LOAD DATA LOCAL INFILE` in `my.cnf` by adding the line `local_infile = 1`.
 - When regenerating the recent changes table manually after completion of the import, recent changes will not display recent changes accurately.
