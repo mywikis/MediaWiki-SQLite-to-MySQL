@@ -26,6 +26,7 @@ It converts by using a CSV file as an intermediate data representation format. F
 4. Generate a MySQL schema file by setting up a dummy MySQL database using the MediaWiki installation script, then using a line like this: `mysqldump -h yourhostnameorIP -u root -p --no-data dummydbname > schema.sql`. Delete the dummy database; it can't be used for the import. Afterwards, create a new MySQL database and use `schema.sql` to populate its schema like so: `mysql -h mysql.hostname.com -u mysqladmin -pPassword1234567890 realdbname < schema.sql`.
 5. Create a temp directory where the CSV files can be stored. It's recommended to use `/tmp` for this.
 6. Run `sqlite-to-csv.php`, then `csv-to-mysql.php`, passing in the appropriate arguments as explained in the comments of these two files.
+7. It is recommended to truncate the `categorylinks` and `recentchanges` tables, then run `rebuildall.php`.
 
 ## Known issues
 
