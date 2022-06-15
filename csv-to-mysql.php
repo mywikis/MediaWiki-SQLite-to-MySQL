@@ -31,7 +31,7 @@ $username = '';
 $password = '';
 
 $path_to_tables_file = '/path/to/tables-1.xx.txt';
-$path_to_schema_file = '/path/to/mediawiki-1.31.0-schema-with-confirmacct.sql';
+$path_to_schema_file = '/path/to/mediawiki-1.xx-schema-with-confirmacct.sql';
 
 $database = $argv[1];
 $csv_path = $argv[2];
