@@ -47,11 +47,10 @@ while (!feof($handle)) {
     `mysql -h ${host} -u ${username} -p${password} --local-infile=1 -e "SET foreign_key_checks = 0; LOAD DATA LOCAL INFILE '${csv_path}/${database}/${table}.csv' IGNORE INTO TABLE ${table} FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' ESCAPED BY '\"' LINES TERMINATED BY '\n' IGNORE 1 LINES (${l1});" ${database}`;
 }
 fclose($handle);
-`mysql -h ${host} -u ${username} -p${password} -e "UPDATE revision SET rev_content_format = NULL, rev_content_model = NULL WHERE rev_content_model = '';" ${database}`;
-`mysql -h ${host} -u ${username} -p${password} -e "UPDATE archive SET ar_content_format = NULL, ar_content_model = NULL WHERE ar_content_model = '';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE user SET user_password_expires = NULL WHERE user_password_expires REGEXP '[^A-Za-z0-9]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE change_tag SET ct_params = NULL WHERE ct_params REGEXP '[^A-Za-z0-9]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE user_groups SET ug_expiry = NULL WHERE ug_expiry REGEXP '[^A-Za-z0-9]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE page SET page_lang = NULL WHERE page_lang REGEXP '[^A-Za-z]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE updatelog SET ul_value = NULL WHERE ul_value REGEXP '[^A-Za-z]';" ${database}`;
 `mysql -h ${host} -u ${username} -p${password} -e "UPDATE watchlist SET wl_notificationtimestamp = NULL WHERE wl_notificationtimestamp REGEXP '[^A-Za-z0-9]';" ${database}`;
+`mysql -h ${host} -u ${username} -p${password} -e "UPDATE comment SET comment_data = NULL WHERE LENGTH(comment_data) = 0;" ${database}`;
