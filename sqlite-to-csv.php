@@ -25,8 +25,8 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-$sqlite_ext = '.sqlite';
-$path_to_tables_file = '/path/to/tables-1.35.txt';
+$sqlite_ext = 'sqlite';
+$path_to_tables_file = '/path/to/tables-1.xx.txt'; # 1.xx: MediaWiki version of input DB
 
 $database = $argv[1];
 $sqlite_path = $argv[2];
